@@ -133,36 +133,50 @@ body{
   /* hero */
 
   .hero-section{
-    display: grid;
-    grid-template-areas: "overlay";
+    position: relative;
     align-content: center;
   }
 
-  .hero-images{
+  .hero-section{
     position: relative;
-    background: url(./img/illustration-hero-left.svg), url(./img/bg-hero-squiggle.svg), url(./img/illustration-hero-right.svg);
-    background-position: -6% 0, center, 106% 0;
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    background-attachment:local;
-    height: 60vh;
-    width: 100%;
-    overflow:clip;
-    grid-area: overlay;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-areas: "image1 image2 image3";
   }
 
-  .hero-wrapper{
+  .hero-text-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    grid-area: image2;
     gap: var(--size-800);
     text-align: center;
-    margin-left: 25vw;
-    margin-right: 25vw;
-    grid-area: overlay;
-    z-index: 1;
   }
+
+  .background-image-1{
+    grid-area: image1;
+    position: relative;
+    left: -14%;
+    overflow: hidden;
+  }
+
+  .background-image-2{
+    grid-area: image2;
+  }
+
+  .background-image-3{
+    grid-area: image3;
+    position: relative;
+    right: -14%;
+    overflow: hidden;
+  }
+  
+
+
+
 
   .hero-text{
     display: flex;
