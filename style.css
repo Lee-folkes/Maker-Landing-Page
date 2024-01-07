@@ -130,6 +130,58 @@ body{
     align-items: flex-start;
   }
 
+  /* hero */
+
+  .hero-section{
+    display: grid;
+    grid-template-areas: "overlay";
+    align-content: center;
+  }
+
+  .hero-images{
+    position: relative;
+    background: url(./img/illustration-hero-left.svg), url(./img/bg-hero-squiggle.svg), url(./img/illustration-hero-right.svg);
+    background-position: -6% 0, center, 106% 0;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-attachment:local;
+    height: 60vh;
+    width: 100%;
+    overflow:clip;
+    grid-area: overlay;
+  }
+
+  .hero-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-800);
+    text-align: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    grid-area: overlay;
+    z-index: 1;
+  }
+
+  .hero-text{
+    display: flex;
+    flex-direction: inherit;
+    gap: var(--size-500);
+  }
+
+  .hero-text h1{
+    color: var(--clr-neutral-100);
+  }
+
+.hero-text > h1 > span{
+    color: var(--clr-accent-400);
+}
+
+.hero-text > p{
+    color: var(--clr-neutral-400);
+}
+
 
 /* <--------Utility Classes--------->*/
 
