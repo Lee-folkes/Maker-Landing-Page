@@ -1,7 +1,7 @@
 /* <--------Custom Properties-------->*/
 :root {
 
-    /* colours */
+    /* colors */
     --clr-primary-900: hsl(230, 60%, 8%);
     --clr-accent-600: hsl(206, 84%, 22%);
     --clr-accent-500: hsl(343, 100%, 58%);
@@ -159,8 +159,15 @@ body{
   .background-image-1{
     grid-area: image1;
     position: relative;
-    left: -14%;
-    overflow: hidden;
+    margin-right: 23%;
+    overflow-x: clip;
+  }
+/* trying to get image to crop to viewport! */
+  .background-image-1 > img{
+    height: 500px;
+   width: 500px;
+   object-fit: none;
+   object-position: right;
   }
 
   .background-image-2{
@@ -170,14 +177,17 @@ body{
   .background-image-3{
     grid-area: image3;
     position: relative;
-    right: -14%;
-    overflow: hidden;
+    margin-left: 23%;
+    overflow-x: clip;
+  }
+
+  .background-image-3 > img{
+    height: 500px;
+   width: 500px;
+   object-fit: none;
+   object-position: left;
   }
   
-
-
-
-
   .hero-text{
     display: flex;
     flex-direction: inherit;
