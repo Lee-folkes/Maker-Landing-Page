@@ -156,6 +156,8 @@ body{
     text-align: center;
   }
 
+  /* need to reduce left & right image dimensions by 30% */
+
   .background-image-1{
     grid-area: image1;
     position: relative;
@@ -173,9 +175,18 @@ body{
 
   .background-image-2{
     grid-area: image2;
+    position: relative;
     overflow: visible;
-    
+    top: -25%;
   }
+
+  .background-image-2 > img{
+    position: absolute;
+    transform: translateX(-50%);
+    min-width: 400px;
+    height: auto;
+  }
+
 
   .background-image-3{
     grid-area: image3;
@@ -184,7 +195,7 @@ body{
   }
 
   .background-image-3 > img{
-    height: 500px;
+  height: 500px;
    width: 500px;
    position: relative;
    transform: translateX(23%);
