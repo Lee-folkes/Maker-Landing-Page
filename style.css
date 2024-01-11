@@ -159,31 +159,35 @@ body{
   .background-image-1{
     grid-area: image1;
     position: relative;
-    margin-right: 23%;
     overflow-x: clip;
   }
-/* trying to get image to crop to viewport! */
+
   .background-image-1 > img{
+    position: relative;
+    transform: translateX(-23%);
     height: 500px;
-   width: 500px;
-   object-fit: none;
-   object-position: right;
+    width: 500px;
+    object-fit: none;
+    object-position: right;
   }
 
   .background-image-2{
     grid-area: image2;
+    overflow: visible;
+    
   }
 
   .background-image-3{
     grid-area: image3;
     position: relative;
-    margin-left: 23%;
     overflow-x: clip;
   }
 
   .background-image-3 > img{
     height: 500px;
    width: 500px;
+   position: relative;
+   transform: translateX(23%);
    object-fit: none;
    object-position: left;
   }
