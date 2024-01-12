@@ -156,8 +156,6 @@ body{
     text-align: center;
   }
 
-  /* need to reduce left & right image dimensions by 30% */
-
   .background-image-1{
     grid-area: image1;
     position: relative;
@@ -219,6 +217,71 @@ body{
 
 .hero-text > p{
     color: var(--clr-neutral-400);
+}
+
+/* Desktop only */
+/* @media(min-width = 768px){
+  .background-image-1 > img{
+    height: 500px;
+    width: 500px;
+  }
+} */
+
+/* Selling Points */
+.selling-points-wrapper{
+  display: grid;
+  grid-template-columns: 1fr,auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "card1 card2 card3 card4";
+  gap: 2rem;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  gap: 1rem;
+}
+
+.card-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  aspect-ratio: 1;
+  background-color: var(--clr-accent-600);
+  border-radius: 2rem;
+}
+
+.card h2{
+  font-size: var(--fs-subheading);
+  color: var(--clr-neutral-100);
+  padding-top: 2rem;
+}
+
+.card p{
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-400);
+  padding-top: 1.5rem;
+}
+
+.card-1{
+  grid-area: card1;
+}
+
+.card-2{
+  grid-area: card2;
+  margin-top: 3rem;
+}
+
+.card-3{
+  grid-area: card3;
+}
+
+.card-4{
+  grid-area: card4;
+  margin-top: 3rem;
 }
 
 
