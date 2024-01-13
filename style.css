@@ -41,6 +41,8 @@
     --size-700: 3rem;
     --size-800: 4rem;
     --size-900: 8.5rem;
+
+    --scale: 1;
   }
 
 /* <---------CSS Reset----------> */
@@ -132,12 +134,7 @@ body{
 
   /* hero */
 
-  /* .hero-section{
-    position: relative;
-    align-content: center;
-  } */
-
-  .top-hero-section{
+  .top-hero-wrapper{
     position: relative;
     display: grid;
     overflow: clip;
@@ -155,17 +152,20 @@ body{
     grid-area: image2;
     gap: var(--size-800);
     text-align: center;
+    width: 55vw;
   }
 
   .background-image-1{
     grid-area: image1;
     position: relative;
+    width: fit-content;
     overflow-x: clip;
   }
 
   .background-image-1 > img{
     position: relative;
-    transform: translateX(-23%);
+    transform-origin: left;
+    transform: scale(var(--scale));
     height: 500px;
     width: 500px;
     object-fit: none;
@@ -198,7 +198,8 @@ body{
     height: 500px;
     width: 500px;
     position: relative;
-    transform: translateX(23%);
+    transform-origin: right;
+    transform: scale(var(--scale));
     object-fit: none;
     object-position: left;
     overflow: hidden;
@@ -214,21 +215,16 @@ body{
     color: var(--clr-neutral-100);
   }
 
-.hero-text > h1 > span{
-    color: var(--clr-accent-400);
-}
+  .hero-text > h1 > span{
+      color: var(--clr-accent-400);
+  }
 
-.hero-text > p{
-    color: var(--clr-neutral-400);
-}
+  .hero-text > p{
+      color: var(--clr-neutral-400);
+  }
 
 /* Desktop only */
-/* @media(min-width = 700px){
-  .background-image-1 > img{
-    height: 500px;
-    width: 500px;
-  }
-} */
+
 
 /* Selling Points */
 
