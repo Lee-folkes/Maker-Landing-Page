@@ -132,14 +132,15 @@ body{
 
   /* hero */
 
-  .hero-section{
+  /* .hero-section{
     position: relative;
     align-content: center;
-  }
+  } */
 
-  .hero-section{
+  .top-hero-section{
     position: relative;
     display: grid;
+    overflow: clip;
     align-items: center;
     justify-items: center;
     grid-template-rows: 1fr;
@@ -169,6 +170,7 @@ body{
     width: 500px;
     object-fit: none;
     object-position: right;
+    overflow: hidden;
   }
 
   .background-image-2{
@@ -193,12 +195,13 @@ body{
   }
 
   .background-image-3 > img{
-  height: 500px;
-   width: 500px;
-   position: relative;
-   transform: translateX(23%);
-   object-fit: none;
-   object-position: left;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transform: translateX(23%);
+    object-fit: none;
+    object-position: left;
+    overflow: hidden;
   }
   
   .hero-text{
@@ -220,7 +223,7 @@ body{
 }
 
 /* Desktop only */
-/* @media(min-width = 768px){
+/* @media(min-width = 700px){
   .background-image-1 > img{
     height: 500px;
     width: 500px;
@@ -228,62 +231,161 @@ body{
 } */
 
 /* Selling Points */
+
+/* Mobile */
+.selling-points-section{
+  display: flex;
+  align-items: center;
+}
 .selling-points-wrapper{
   display: grid;
   grid-template-columns: 1fr,auto;
-  grid-template-rows: 1fr;
-  grid-template-areas: "card1 card2 card3 card4";
-  gap: 2rem;
+  grid-template-rows: 1fr,auto;
+  grid-template-areas: 
+  "card1"
+  "card2"
+  "card3"
+  "card4";
+  margin-top: var(--size-500);
+  gap: 3rem; 
+  padding: 3rem;
+  overflow: hidden;
 }
 
 .card{
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
+  flex-direction: column;
 }
 
 .card-image{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10rem;
   aspect-ratio: 1;
+  max-width: 7rem;
+  min-width: 5rem;
+  max-height: 7rem;
+  min-height: 5rem;
   background-color: var(--clr-accent-600);
   border-radius: 2rem;
+  padding: 1.5rem;
 }
 
 .card h2{
   font-size: var(--fs-subheading);
   color: var(--clr-neutral-100);
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .card p{
   font-size: var(--fs-body);
   color: var(--clr-neutral-400);
-  padding-top: 1.5rem;
+  padding-top: .5rem;
 }
 
 .card-1{
   grid-area: card1;
+  margin:0 0 0 0;
 }
 
 .card-2{
   grid-area: card2;
-  margin-top: 3rem;
+  margin:0 0 0 0;
 }
-
 .card-3{
   grid-area: card3;
+  margin:0 0 0 0;
 }
-
 .card-4{
   grid-area: card4;
-  margin-top: 3rem;
+  margin:0 0 0 0;
 }
 
+/* Tablet */
+@media(min-width: 500px){
+
+  .selling-points-wrapper{
+    gap: 2rem;
+  }
+  
+  .card{
+    flex-direction: row;
+    gap: 3rem;
+    align-items: left;
+    text-align: left;
+  }
+
+  .card h2{
+    padding-top: 1rem;
+  }
+
+  .card p{
+    padding-top: .5rem;
+  }
+
+  .card-1{
+    margin:0 0 0 3rem;
+  }
+  .card-2{
+    margin:0 0 0 0;
+  }
+  .card-3{
+    margin:0 0 0 3rem;
+  }
+  .card-4{
+    margin:0 0 0 0;
+  }
+}
+
+/* Desktop */
+@media(min-width: 750px){
+  .selling-points-wrapper{
+    grid-template-areas: "card1 card2 card3 card4";
+    margin-top: var(--size-800);
+    padding: 2rem;
+  }
+
+  .card{
+    flex-direction: column;
+    gap: .75rem;
+    justify-content: left;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .card h2{
+    padding-top: 1.5rem;
+  }
+
+  .card p{
+    padding-top: 1.5rem;
+  }
+
+  .card-image{
+    max-width: 8rem;
+    max-height: 8rem;
+    flex-basis: 100%;
+  }
+
+  .card-1{
+    margin: 0 0 0 0;
+  }
+  .card-2{
+    margin: 3rem 0 0 0;
+  }
+  .card-3{
+    margin: 0 0 0 0;
+  }
+  .card-4{
+    margin: 3rem 0 0 0;
+    padding-right: 3rem;
+  }
+
+
+};
 
 /* <--------Utility Classes--------->*/
 
