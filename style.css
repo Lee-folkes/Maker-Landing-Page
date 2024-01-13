@@ -40,7 +40,7 @@
     --size-600: 2rem;
     --size-700: 3rem;
     --size-800: 4rem;
-    --size-900: 8.5rem;
+    --size-900: 9rem;
 
     --scale: 1;
   }
@@ -129,20 +129,46 @@ body{
   /* Header */
   .header{
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
   }
+
+  @media(min-width: 500px){
+    .header{
+      justify-content: flex-start;
+    }
+  }
+
+
 
   /* hero */
 
+  /* mobile */
   .top-hero-wrapper{
-    position: relative;
     display: grid;
-    overflow: clip;
-    align-items: center;
-    justify-items: center;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    grid-template-areas: "image1 image2 image3";
+    grid-template-rows: 65vw 1fr;
+    grid-template-areas: "bgMobile"
+                         "image2";
+  }
+
+  .bg-mobile-only{
+    background-image: url(./img/illustration-hero-mobile.png);
+    background-repeat: no-repeat;
+    background-position: top-left;
+    background-size: 110vw;
+    height: auto; 
+    grid-area: bgMobile;
+  }
+
+  .background-image-1{
+    display: none;
+    
+  }
+  .background-image-2{
+    display: none;
+    
+  }
+  .background-image-3{
+    display: none;
   }
 
   .hero-text-wrapper{
@@ -150,69 +176,23 @@ body{
     flex-direction: column;
     align-items: center;
     grid-area: image2;
-    gap: var(--size-800);
+    gap: var(--size-500);
     text-align: center;
-    width: 55vw;
+    width: 100%;
+    padding: 0 1.5rem 0 1.5rem;
   }
 
-  .background-image-1{
-    grid-area: image1;
-    position: relative;
-    width: fit-content;
-    overflow-x: clip;
-  }
-
-  .background-image-1 > img{
-    position: relative;
-    transform-origin: left;
-    transform: scale(var(--scale));
-    height: 500px;
-    width: 500px;
-    object-fit: none;
-    object-position: right;
-    overflow: hidden;
-  }
-
-  .background-image-2{
-    grid-area: image2;
-    position: relative;
-    overflow: visible;
-    top: -25%;
-  }
-
-  .background-image-2 > img{
-    position: absolute;
-    transform: translateX(-50%);
-    min-width: 400px;
-    height: auto;
-  }
-
-
-  .background-image-3{
-    grid-area: image3;
-    position: relative;
-    overflow-x: clip;
-  }
-
-  .background-image-3 > img{
-    height: 500px;
-    width: 500px;
-    position: relative;
-    transform-origin: right;
-    transform: scale(var(--scale));
-    object-fit: none;
-    object-position: left;
-    overflow: hidden;
-  }
-  
   .hero-text{
     display: flex;
     flex-direction: inherit;
-    gap: var(--size-500);
+    margin-top: var(--size-600);
+    gap: var(--size-200);
   }
 
   .hero-text h1{
+    font-size: var(--fs-heading-mobile);
     color: var(--clr-neutral-100);
+    margin: 0 2rem 0 2rem;
   }
 
   .hero-text > h1 > span{
@@ -223,8 +203,94 @@ body{
       color: var(--clr-neutral-400);
   }
 
-/* Desktop only */
+  /* tablet & desktop */
+  @media(min-width: 500px) {
+    .top-hero-wrapper{
+      position: relative;
+      display: grid;
+      overflow: clip;
+      align-items: center;
+      justify-items: center;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr, 1fr, 1fr;
+      grid-template-areas: "image1 image2 image3";
+    }
 
+    .hero-text-wrapper{
+      width: 55vw;
+      padding: 0;
+      gap: var(--size-800);
+    }
+
+    .hero-text{
+      margin-top: var(--size-700);
+      gap: var(--size-500);
+    }
+
+    .hero-text h1{
+      font-size: var(--fs-heading-tablet);
+    }
+
+    .background-image-1{
+      display: block;
+      grid-area: image1;
+      position: relative;
+      width: fit-content;
+      overflow-x: clip;
+    }
+  
+    .background-image-1 > img{
+      position: relative;
+      transform-origin: left;
+      transform: scale(var(--scale));
+      height: 500px;
+      width: 500px;
+      object-fit: none;
+      object-position: right;
+      overflow: hidden;
+    }
+  
+    .background-image-2{
+      display: block;
+      grid-area: image2;
+      position: relative;
+      overflow: visible;
+      top: -25%;
+    }
+  
+    .background-image-2 > img{
+      position: absolute;
+      transform: translateX(-50%);
+      min-width: 400px;
+      height: auto;
+    }
+  
+  
+    .background-image-3{
+      display: block;
+      grid-area: image3;
+      position: relative;
+      overflow-x: clip;
+    }
+  
+    .background-image-3 > img{
+      height: 500px;
+      width: 500px;
+      position: relative;
+      transform-origin: right;
+      transform: scale(var(--scale));
+      object-fit: none;
+      object-position: left;
+      overflow: hidden;
+    }
+  }
+
+  @media(min-width: 750px){
+    .hero-text h1{
+      font-size: var(--fs-heading);
+    }
+  }
+  
 
 /* Selling Points */
 
@@ -242,9 +308,9 @@ body{
   "card2"
   "card3"
   "card4";
-  margin-top: var(--size-500);
+  margin-top: var(--size-900);
   gap: 3rem; 
-  padding: 3rem;
+  padding: 0 3rem 3rem 3rem;
   overflow: hidden;
 }
 
