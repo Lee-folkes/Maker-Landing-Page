@@ -40,6 +40,7 @@
     --size-600: 2rem;
     --size-700: 3rem;
     --size-800: 4rem;
+    --size-850: 7rem;
     --size-900: 9rem;
 
     --scale: 1;
@@ -448,6 +449,8 @@ body{
 
   /* Bottom Hero Section */
 
+  /* Mobile & Tablet */
+
   .hero-section{
     display: flex;
     width: 100%;
@@ -455,12 +458,13 @@ body{
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    overflow: hidden;
   }
 
   .hero-title{
     text-align: center;
-    max-width: 50vw;
-    margin-top: var(--size-900);
+    max-width: 70vw;
+    margin-top: var(--size-850);
   }
 
   .hero-title h1{
@@ -475,11 +479,15 @@ body{
   }
   
   .hero-wrapper{
+    justify-content: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "left right";
-    gap: 2rem;
-    margin-top: var(--size-900);
+    grid-template-columns: minmax(20rem, 80vw);
+    grid-template-areas: 
+    "left"
+    "right";
+    gap: 4rem;
+    margin-top: var(--size-800);
+    
   }
 
   .hero-image{
@@ -540,6 +548,19 @@ body{
     font-size: var(--fs-subheading);
   }
 
+  /* Desktop */
+  @media (min-width: 750px){
+    .hero-wrapper{
+      grid-template-areas: "left right";
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: var(--size-850);
+    }
+
+    .hero-title{
+      max-width: 35rem;
+    }
+  }
 
 
 /* <--------Utility Classes--------->*/
@@ -572,7 +593,7 @@ body{
   
   
   .fw-bold{
-    font-weight: var(--fw-bold);
+   font-weight: var(--fw-bold);
   }
   .fw-regular{
     font-weight: var(--fw-regular);
