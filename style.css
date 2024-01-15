@@ -487,7 +487,6 @@ body{
     "right";
     gap: 4rem;
     margin-top: var(--size-800);
-    
   }
 
   .hero-image{
@@ -561,6 +560,73 @@ body{
       max-width: 35rem;
     }
   }
+
+  /* Email Form */
+  .form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: var(--size-900);
+    margin-bottom: var(--size-850);
+    height: 35vh;
+    background-image: url(./img/bg-footer-squiggle.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .form-heading{
+    font-size: var(--fs-heading-mobile);
+    color: var(--clr-neutral-100);
+  }
+
+  .form-content{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #email-field{
+    width: 20rem;
+    padding: .5rem 1rem;
+    border-radius: 100vw;
+    border: none;
+    background-color: var(--clr-accent-600);
+    color: var(--clr-neutral-100);
+  }
+
+  #email-field:focus{
+    outline:  3px solid var(--clr-accent-400);
+  }
+
+  #form-error-label{
+    position: absolute;
+    display: block;
+    top: 3.5rem;
+    left: 1rem;
+    color: var(--clr-accent-500);
+    font-size: var(--fs-body);
+  }
+
+  .form-button{
+    cursor: pointer;
+    border: none;
+    background-color: var(--clr-accent-400);
+    height: 3rem;
+    border-radius: 100vw;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+
+  .form-button:focus, .form-button:hover, .form-button:active{
+    outline:  3px solid var(--clr-accent-400);
+    background-color: var(--clr-primary-900);
+    color: var(--clr-neutral-100);
+    transition: .3s ease-in;
+  }
+
 
 
 /* <--------Utility Classes--------->*/
