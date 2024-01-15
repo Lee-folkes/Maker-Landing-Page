@@ -7,7 +7,7 @@ window.addEventListener("resize", () => {
     //set 100% scale value
     const fullSize = 1;
 
-    //checks if scale value is greater than 100%
+    //checks if scale value is greater than 100%, if true, set scale to 100%
     if (scaleFactor >= fullSize){
         document.documentElement.style
             .setProperty('--scale', fullSize);               
