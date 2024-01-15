@@ -8,7 +8,7 @@ window.addEventListener("resize", () => {
     const fullSize = 1;
 
     //checks if scale value is greater than 100%
-    if (scaleFactor >= 1){
+    if (scaleFactor >= fullSize){
         document.documentElement.style
             .setProperty('--scale', fullSize);               
     } 
