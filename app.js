@@ -1,20 +1,26 @@
 //Scales image based on viewport width
 window.addEventListener("resize", () => {
-    const viewportWidth= window.innerWidth / 1000;
-    const fullSize = 1
+    //get current width of viewport
+    const viewportWidth = window.innerWidth;
+    //divide by 1000 to get usable value
+    const scaleFactor = viewportWidth / 1000;
+    //set 100% scale value
+    const fullSize = 1;
 
-    if (viewportWidth >= 1){
+    //checks if scale value is greater than 100%
+    if (scaleFactor >= 1){
         document.documentElement.style
             .setProperty('--scale', fullSize);               
     } 
-    
+
+    //scales image down if value is less than 100%
     else{
         document.documentElement.style
-            .setProperty('--scale', viewportWidth);
+            .setProperty('--scale', scaleFactor);
     }
 })
 
-
+//could add elseif to handle errors and set to 100%?
 
 
 
