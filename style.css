@@ -574,7 +574,7 @@ body{
     gap: 2rem;
     margin-top: var(--size-900);
     margin-bottom: var(--size-850);
-    height: 35vh;
+    min-height: 35vh;
     background-image: url(./img/bg-footer-squiggle.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -582,19 +582,20 @@ body{
   }
 
   .form-heading{
-    font-size: var(--fs-heading-mobile);
+    font-size: var(--size-500);
     color: var(--clr-neutral-100);
+    text-align: center;
   }
 
   .form-content{
     position: relative;
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 3.5rem;
   }
 
   #email-field{
-    width: 20rem;
+    width: 22rem;
     padding: .5rem 1rem;
     border-radius: 100vw;
     border: none;
@@ -604,6 +605,7 @@ body{
 
   #email-field:focus{
     outline: var(--outline);
+    transition: .3s ease-in;
   }
 
   #form-error-label{
@@ -620,7 +622,7 @@ body{
     cursor: pointer;
     border: none;
     background-color: var(--clr-accent-400);
-    height: 3rem;
+    height: 2.5rem;
     border-radius: 100vw;
     padding: 0 1.5rem 0 1.5rem;
     /* outline: 3px solid hsl(179, 80%, 58%); */
@@ -631,6 +633,20 @@ body{
     background-color: var(--clr-primary-900);
     color: var(--clr-neutral-100);
     transition: .3s ease-in;
+  }
+
+  /* Desktop & Tablet */
+
+  @media(min-width: 500px){
+    .form-content{
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .form-heading{
+      font-size: var(--size-500);
+      text-align: center;
+    }
   }
 
 
