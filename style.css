@@ -44,6 +44,10 @@
     --size-900: 9rem;
 
     --scale: 1;
+    --opacity: 0;
+    --outline-normal: 2px solid var(--clr-accent-400);
+    --outline-error: 2px solid var(--clr-accent-500);
+    --outline: var(--outline-normal);
   }
 
 /* <---------CSS Reset----------> */
@@ -599,16 +603,17 @@ body{
   }
 
   #email-field:focus{
-    outline:  3px solid var(--clr-accent-400);
+    outline: var(--outline);
   }
 
   #form-error-label{
     position: absolute;
-    display: block;
+    opacity: var(--opacity);
     top: 3.5rem;
     left: 1rem;
     color: var(--clr-accent-500);
     font-size: var(--fs-body);
+    transition: .3s ease-in;
   }
 
   .form-button{
@@ -618,6 +623,7 @@ body{
     height: 3rem;
     border-radius: 100vw;
     padding: 0 1.5rem 0 1.5rem;
+    /* outline: 3px solid hsl(179, 80%, 58%); */
   }
 
   .form-button:focus, .form-button:hover, .form-button:active{

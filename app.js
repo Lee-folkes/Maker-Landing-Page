@@ -23,6 +23,39 @@ window.addEventListener("resize", () => {
 //could add elseif to handle errors and set to 100%?
 
 
+//Email form
+
+//input value
+const emailValue = document.getElementById("email-field")
+//regex pattern to match
+const pattern = /^[^ ]+@[^ ]+\.[a-zA-Z]{2,3}$/
+
+//listen for input
+emailValue.addEventListener("input", () => {
+    //check if input value matches pattern, if true set default values
+    if (emailValue.value.match(pattern)) {
+        document.documentElement.style
+            .setProperty('--opacity', "0");
+        document.documentElement.style
+            .setProperty('--outline', "var(--outline-normal)");
+    }
+    //check if input is empty, if true set default values
+    else if(emailValue.value === ""){
+        document.documentElement.style
+            .setProperty('--opacity', "0");
+        document.documentElement.style
+            .setProperty('--outline', "var(--outline-normal)");} 
+            //set error values
+            else{
+        document.documentElement.style
+                .setProperty('--opacity', "1");
+        document.documentElement.style
+                .setProperty('--outline', "var(--outline-error)");
+        
+
+    }
+})
+
 
 
 
