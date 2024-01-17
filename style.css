@@ -162,18 +162,12 @@ body{
     background-size: 110vw;
     height: auto; 
     grid-area: bgMobile;
+    visibility: visible;
   }
 
-  .background-image-1{
+  .background-image-1, .background-image-2, .background-image-3{
     display: none;
-    
-  }
-  .background-image-2{
-    display: none;
-    
-  }
-  .background-image-3{
-    display: none;
+    visibility: hidden;
   }
 
   .hero-text-wrapper{
@@ -236,8 +230,13 @@ body{
       font-size: var(--fs-heading-tablet);
     }
 
+    .bg-mobile-only{
+      visibility: hidden;
+    }
+
     .background-image-1{
       display: block;
+      visibility: visible;
       grid-area: image1;
       position: relative;
       width: fit-content;
@@ -257,6 +256,7 @@ body{
   
     .background-image-2{
       display: block;
+      visibility: visible;
       grid-area: image2;
       position: relative;
       overflow: visible;
@@ -273,6 +273,7 @@ body{
   
     .background-image-3{
       display: block;
+      visibility: visible;
       grid-area: image3;
       position: relative;
       overflow-x: clip;
